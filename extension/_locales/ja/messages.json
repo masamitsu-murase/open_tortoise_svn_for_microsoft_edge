@@ -1,0 +1,52 @@
+{
+    "option_page": {
+        "message": "options_ja.html"
+    },
+
+    "browser": {
+        "message": "リポジトリブラウザ"
+    },
+    "blame": {
+        "message": "注釈履歴"
+    },
+    "log": {
+        "message": "ログ"
+    },
+    "open_in_browser": {
+        "message": "Edge で開く"
+    },
+
+    "context_menu_browser": {
+        "message": "リポジトリブラウザを開く"
+    },
+    "context_menu_log": {
+        "message": "ログを開く"
+    },
+    "context_menu_blame": {
+        "message": "注釈履歴を開く"
+    },
+    "context_menu_open_in_browser": {
+        "message": "Edgeで開く"
+    },
+
+    "native_messaging_host_error": {
+        "message": "この拡張機能が適切にインストールされているか確認してください。"
+    },
+
+    "Add": {
+        "message": "追加"
+    },
+    "Remove": {
+        "message": "削除"
+    },
+
+    "icon_path_browser": {
+        "message": "images/ja/tooltip_repobrowser.svg"
+    },
+    "icon_path_blame": {
+        "message": "images/ja/tooltip_blame.svg"
+    },
+    "icon_path_log": {
+        "message": "images/ja/tooltip_log.svg"
+    }
+}

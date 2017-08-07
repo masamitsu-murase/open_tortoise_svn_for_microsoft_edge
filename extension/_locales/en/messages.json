@@ -1,0 +1,52 @@
+{
+    "option_page": {
+        "message": "options_en.html"
+    },
+
+    "browser": {
+        "message": "Repo-browser"
+    },
+    "blame": {
+        "message": "Blame Viewer"
+    },
+    "log": {
+        "message": "Log Viewer"
+    },
+    "open_in_browser": {
+        "message": "Open in Edge"
+    },
+
+    "context_menu_browser": {
+        "message": "Open Repo-browser"
+    },
+    "context_menu_log": {
+        "message": "Open Log Viewer"
+    },
+    "context_menu_blame": {
+        "message": "Open Blame Viewer"
+    },
+    "context_menu_open_in_browser": {
+        "message": "Open in Edge"
+    },
+
+    "native_messaging_host_error": {
+        "message": "Please make sure that this extension is installed properly."
+    },
+
+    "Add": {
+        "message": "Add"
+    },
+    "Remove": {
+        "message": "Remove"
+    },
+
+    "icon_path_browser": {
+        "message": "images/en/tooltip_repobrowser.svg"
+    },
+    "icon_path_blame": {
+        "message": "images/en/tooltip_blame.svg"
+    },
+    "icon_path_log": {
+        "message": "images/en/tooltip_log.svg"
+    }
+}

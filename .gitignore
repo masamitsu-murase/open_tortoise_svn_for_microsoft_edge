@@ -1,0 +1,6 @@
+.vs/
+*.user
+*.bak
+bin/
+obj/
+*.pfx
