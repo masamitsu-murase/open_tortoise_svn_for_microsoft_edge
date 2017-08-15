@@ -64,18 +64,16 @@ namespace TortoiseSvnOpener
         /// </summary>
         private static async void Connection_RequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
         {
-            // Key can be ignored.
-            // string key = args.Request.Message.First().Key;
-            string value = args.Request.Message.First().Value.ToString();
-
+            AppServiceDeferral messageDeferral = args.GetDeferral();
             try
             {
-                var json_serializer = new JavaScriptSerializer();
+                var value = args.Request.Message.First().Value.ToString();
+                var jsonSerializer = new JavaScriptSerializer();
                 var response = new ValueSet();
                 try
                 {
-                    var value_list = (IDictionary<string, object>)json_serializer.DeserializeObject(value);
-                    string messageType = value_list["action"].ToString();
+                    var valueList = (IDictionary<string, object>)jsonSerializer.DeserializeObject(value);
+                    string messageType = valueList["action"].ToString();
 
                     switch (messageType)
                     {
@@ -83,31 +81,34 @@ namespace TortoiseSvnOpener
                             var tsvnPath = SearchTsvn();
                             if (tsvnPath != "")
                             {
-                                response.Add("message", json_serializer.Serialize(new { result = true, data = tsvnPath }));
+                                response.Add("message", jsonSerializer.Serialize(new { result = true, data = tsvnPath }));
                             }
                             else
                             {
-                                response.Add("message", json_serializer.Serialize(new { result = true, data = false }));
+                                response.Add("message", jsonSerializer.Serialize(new { result = true, data = false }));
                             }
                             break;
                         case "tsvn":
-                            var path = value_list["path"].ToString();
-                            var tsvn_args = ((object[])value_list["args"]).Select(o => (string)o).ToArray();
+                            var path = valueList["path"].ToString();
+                            var tsvn_args = ((object[])valueList["args"]).Select(o => (string)o).ToArray();
                             var ret = RunTsvn(path, tsvn_args);
-                            response.Add("message", json_serializer.Serialize(new { result = ret }));
+                            response.Add("message", jsonSerializer.Serialize(new { result = ret }));
+                            break;
+                        default:
+                            response.Add("message", jsonSerializer.Serialize(new { result = false, error = "Unknown action" }));
                             break;
                     }
                 }
                 catch (System.Exception e)
                 {
                     response = new ValueSet();
-                    response.Add("message", json_serializer.Serialize(new { result = false, error = e.ToString() }));
+                    response.Add("message", jsonSerializer.Serialize(new { result = false, error = e.ToString() }));
                 }
                 await args.Request.SendResponseAsync(response);
-                sender.Dispose();
             }
             finally
             {
+                messageDeferral.Complete();
                 Application.Exit();
             }
         }
