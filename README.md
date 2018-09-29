@@ -22,7 +22,8 @@ This extension is a Microsoft Edge version of [Open TortoiseSVN for Firefox](htt
    ```
    > Add-AppxPackage OpenTortoiseSVN.appx
    ```
-   Run this command as an administrator.
+   Run this command as an administrator.  
+   If `Add-AppxPackage` causes any error, you may have to enable *Developer Mode*. Please refer to [Microsoft page](https://docs.microsoft.com/en-US/windows/uwp/get-started/enable-your-device-for-development).
 5. You can find this extension in Edge.
 
 ## For Developers
