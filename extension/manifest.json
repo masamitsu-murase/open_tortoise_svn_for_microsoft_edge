@@ -1,11 +1,8 @@
 {
     "manifest_version": 2,
-
     "name": "Open TortoiseSVN",
-    "version": "2.3.2",
-
+    "version": "2.3.3",
     "author": "Masamitsu MURASE",
-
     "description": "Extension to open a file directly in TortoiseSVN instead of in the browser.",
     "icons": {
         "16": "icons/icon16.png",
@@ -14,9 +11,7 @@
         "40": "icons/icon40.png",
         "48": "icons/icon48.png"
     },
-
     "default_locale": "en",
-
     "background": {
         "scripts": [
             "js/common/misc.js",
@@ -33,7 +28,6 @@
         ],
         "persistent": true
     },
-
     "browser_action": {
         "default_icon": {
             "30": "icons/icon30.png",
@@ -41,11 +35,16 @@
         },
         "default_title": "Open TortoiseSVN"
     },
-
     "content_scripts": [
         {
-            "matches": [ "http://*/*", "https://*/*", "file:///*/*" ],
-            "css": [ "css/page.css" ],
+            "matches": [
+                "http://*/*",
+                "https://*/*",
+                "file:///*/*"
+            ],
+            "css": [
+                "css/page.css"
+            ],
             "js": [
                 "js/common/misc.js",
                 "js/common/action_matcher.js",
@@ -61,16 +60,17 @@
             ]
         }
     ],
-
     "options_page": "html/options.html",
-
-    "permissions": [ "tabs", "contextMenus", "nativeMessaging", "storage" ],
-
+    "permissions": [
+        "tabs",
+        "contextMenus",
+        "nativeMessaging",
+        "storage"
+    ],
     "web_accessible_resources": [
         "images/en/tooltip_repobrowser.svg",
         "images/en/tooltip_blame.svg",
         "images/en/tooltip_log.svg",
-
         "images/ja/tooltip_repobrowser.svg",
         "images/ja/tooltip_blame.svg",
         "images/ja/tooltip_log.svg"
