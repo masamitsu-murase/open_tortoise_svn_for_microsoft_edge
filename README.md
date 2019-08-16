@@ -12,7 +12,9 @@ This extension is a Microsoft Edge version of [Open TortoiseSVN for Firefox](htt
 ## How to install.
 
 1. Confirm that your Edge is "Microsoft EdgeHTML 15" or later.
-2. Download [appx file](https://github.com/masamitsu-murase/open_tortoise_svn_for_microsoft_edge/blob/master/package/OpenTortoiseSVN.appx?raw=true) and [certificate file](https://github.com/masamitsu-murase/open_tortoise_svn_for_microsoft_edge/blob/master/package/public.cer?raw=true).
+2. Download [appx file](https://github.com/masamitsu-murase/open_tortoise_svn_for_microsoft_edge/blob/master/package/OpenTortoiseSVN.appx?raw=true) and [certificate file](https://github.com/masamitsu-murase/open_tortoise_svn_for_microsoft_edge/blob/master/package/public.cer?raw=true).  
+   You can also download them from [Releases page](https://github.com/masamitsu-murase/open_tortoise_svn_for_microsoft_edge/releases).  
+   If you have installed older version, please uninstall it in Control Panel before you install the newer version.
 3. Add the certificate to your certificate store with the following command.  
    ```
    > certutil -addstore TrustedPeople public.cer
